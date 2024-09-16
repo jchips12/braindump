@@ -16,7 +16,8 @@
 3. `sudo systemctl restart ssh`
 
 ## [Install RKE2](https://docs.rke2.io/install/quickstart)
-1. `curl -sfL https://get.rke2.io | sudo sh -`
-2. `sudo systemctl enable rke2-server.service`
-3. `sudo systemctl start rke2-server.service`
-4. Optionally follow logs to see the status: `sudo journalctl -u rke2-server -f`
+1. `curl -sfL https://get.rke2.io | sh -`
+2. `systemctl enable --now rke2-server.service` (see the status: `sudo journalctl -u rke2-server -f`)
+3. `ln -s $(find /var/lib/rancher/rke2/data/ -name kubectl) /usr/local/bin/kubectl`
+4. `echo "export KUBECONFIG=/etc/rancher/rke2/rke2.yaml PATH=$PATH:/usr/local/bin/:/var/lib/rancher/rke2/bin/" >> ~/.bashrc`
+5. `source ~/.bashrc`
