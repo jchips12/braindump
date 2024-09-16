@@ -12,7 +12,7 @@
 
 ## Disable ssh root login
 1. `sudo vim /etc/ssh/sshd_config`
-2. update `~~PermitRootLogin yes~~` `PermitRootLogin no`
+2. update ~~`PermitRootLogin yes`~~ `PermitRootLogin no`
 3. `sudo systemctl restart ssh`
 
 ## [Install RKE2](https://docs.rke2.io/install/quickstart)
